@@ -95,9 +95,9 @@ footer{background:#0d211b;color:#dce8e1;padding:30px 5%;margin-top:40px}footer a
 const listenBtn=document.getElementById('listenBtn');
 listenBtn.addEventListener('click',()=>{
  if(!('speechSynthesis' in window)){document.getElementById('audioStatus').textContent=' Audio playback is not supported by this browser.';return;}
- if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();listenBtn.textContent='▶ Listen to the sample interview';return;}
+ if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();listenBtn.textContent='▶ Listen to the Audio';return;}
  const textToRead='Interviewer: What makes a campus environment supportive? Student voice: A supportive campus is one where students can access learning resources, receive guidance and raise concerns without fear. Communication between students and administration should be open and respectful. Interviewer: What one change would you prioritise? Student voice: I would strengthen student participation in decisions that affect daily campus life. Student representatives should communicate regularly with learners and follow up on issues raised.';
- const utterance=new SpeechSynthesisUtterance(textToRead);utterance.rate=0.94;utterance.onend=()=>listenBtn.textContent='▶ Listen to the sample interview';window.speechSynthesis.speak(utterance);listenBtn.textContent='■ Stop audio';
+ const utterance=new SpeechSynthesisUtterance(textToRead);utterance.rate=0.94;utterance.onend=()=>listenBtn.textContent='▶ Listen to the Audio';window.speechSynthesis.speak(utterance);listenBtn.textContent='■ Stop audio';
 });
 document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('formMessage').textContent='Thank you! This demo form does not store or send email addresses.';e.target.reset();});
 </script>
